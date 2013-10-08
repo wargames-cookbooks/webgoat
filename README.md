@@ -36,7 +36,7 @@ When it's done browse `http://<ip_address>/WebGoat/attack`
 - First, install dependencies:  
 `bundle install`  
 
-- Install cookbook dependencies
+- Install cookbook dependencies:  
 `berks install`
 
 - Run strainer tests:  
