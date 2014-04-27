@@ -10,11 +10,9 @@ platforms:
     box_url: https://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_provisionerless.box
 
 suites:
-- name: "default"
+- name: default
   run_list:
   - recipe[webgoat]
-  - recipe[minitest-handler]
-  - recipe[webgoat_test]
   attributes: {
     webgoat: {
       version: ""

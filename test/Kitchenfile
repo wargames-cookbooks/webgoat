@@ -1,4 +1,0 @@
-# -*- ruby -*-
-cookbook "webgoat" do
-  configuration "default"
-end
