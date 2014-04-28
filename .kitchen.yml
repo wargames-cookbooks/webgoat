@@ -12,7 +12,7 @@ platforms:
 suites:
 - name: default
   run_list:
-  - recipe[webgoat]
+    - recipe[webgoat]
   attributes: {
     webgoat: {
       version: ""
