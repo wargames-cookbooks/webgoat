@@ -1,6 +1,7 @@
 OWASP WebGoat Cookbook
 =============
-Deploy a WebGoat 5.4 environment. [![Build Status](https://secure.travis-ci.org/wargames-cookbooks/webgoat.png)](http://travis-ci.org/wargames-cookbooks/webgoat)
+Deploy a WebGoat 5.4 environment.
+[![Cookbook Version](https://img.shields.io/cookbook/v/webgoat.svg)](https://community.opscode.com/cookbooks/webgoat) [![Build Status](https://secure.travis-ci.org/wargames-cookbooks/webgoat.png)](http://travis-ci.org/wargames-cookbooks/webgoat)
 
 Requirements
 ------------
