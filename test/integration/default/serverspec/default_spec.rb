@@ -1,4 +1,4 @@
-# encoding: utf-8
+# -*- coding: utf-8 -*-
 #
 # Cookbook Name:: webgoat
 # Recipe:: default
@@ -16,8 +16,14 @@
 # limitations under the License.
 #
 
-require "spec_helper"
+require 'serverspec'
 
-describe file("/var/lib/tomcat6/webapps/WebGoat.war") do
+include SpecInfra::Helper::Exec
+include SpecInfra::Helper::DetectOS
+
+describe file('/var/lib/tomcat6/webapps/WebGoat.war') do
   it { should be_file }
+  it { should be_owned_by 'root' }
+  it { should be_grouped_into 'root' }
+  it { should be_mode 644 }
 end

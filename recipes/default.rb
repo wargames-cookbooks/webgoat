@@ -1,4 +1,4 @@
-# encoding: utf-8
+# -*- coding: utf-8 -*-
 #
 # Cookbook Name:: webgoat
 # Recipe:: default
@@ -16,19 +16,15 @@
 # limitations under the License.
 #
 
-if platform_family?("debian")
-  include_recipe "apt"
-end
+include_recipe 'java'
+include_recipe 'openssl'
+include_recipe 'tomcat'
+include_recipe 'tomcat::users'
 
-include_recipe "java"
-include_recipe "openssl"
-include_recipe "tomcat"
-include_recipe "tomcat::users"
-
-dl_url = "http://webgoat.googlecode.com/files/WebGoat-5.4.war"
-localfile = node["tomcat"]["webapp_dir"] + "/WebGoat.war"
+dl_url = 'http://webgoat.googlecode.com/files/WebGoat-5.4.war'
+localfile = node['tomcat']['webapp_dir'] + '/WebGoat.war'
 
 remote_file localfile do
   source dl_url
-  mode "0644"
+  mode '0644'
 end

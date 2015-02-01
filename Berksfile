@@ -1,9 +1,3 @@
-# -*- ruby -*-
-site :opscode
-
+# -*- coding: utf-8 -*-
+source 'https://supermarket.getchef.com'
 metadata
-
-cookbook 'apt'
-cookbook 'java'
-cookbook 'openssl'
-cookbook 'tomcat'
