@@ -10,7 +10,6 @@ Requirements
 - `Ubuntu 12.04`
 
 #### Cookbooks
-- `apt` - https://github.com/opscode-cookbooks/apt.git
 - `java` - https://github.com/opscode-cookbooks/java.git
 - `openssl` - https://github.com/opscode-cookbooks/openssl.git
 - `tomcat` - https://github.com/opscode-cookbooks/tomcat.git
