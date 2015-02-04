@@ -5,13 +5,10 @@ Deploy a WebGoat 5.4 environment.
 
 Requirements
 ------------
-
 #### Platform
 - `Ubuntu 12.04`
 
 #### Cookbooks
-- `java` - https://github.com/opscode-cookbooks/java.git
-- `openssl` - https://github.com/opscode-cookbooks/openssl.git
 - `tomcat` - https://github.com/opscode-cookbooks/tomcat.git
 
 Usage

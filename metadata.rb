@@ -23,8 +23,6 @@ version '0.1.1'
 
 recipe 'default', 'Installs/configures WebGoat'
 
-depends 'java'
-depends 'openssl'
 depends 'tomcat'
 
 supports 'ubuntu'

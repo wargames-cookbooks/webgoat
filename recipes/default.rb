@@ -16,15 +16,9 @@
 # limitations under the License.
 #
 
-include_recipe 'java'
-include_recipe 'openssl'
-include_recipe 'tomcat'
-include_recipe 'tomcat::users'
-
 dl_url = 'http://webgoat.googlecode.com/files/WebGoat-5.4.war'
 localfile = node['tomcat']['webapp_dir'] + '/WebGoat.war'
 
 remote_file localfile do
   source dl_url
-  mode '0644'
 end
