@@ -26,7 +26,7 @@ Just include `webgoat` in your node's `run_list`:
 }
 ```
 
-When it's done browse `http://<ip_address>/WebGoat/attack`
+When it's done browse `http://<ip_address>:8080/WebGoat/attack`
 
 #### Running tests
 
