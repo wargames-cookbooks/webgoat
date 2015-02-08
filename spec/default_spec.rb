@@ -15,7 +15,7 @@ describe 'webgoat::default' do
     end.converge(described_recipe)
   end
 
-  it 'does download war file and place it in tomcat webapp directory' do
+  it 'should download war file and place it in tomcat webapp directory' do
     expect(subject).to create_remote_file('/opt/tomcat/webapp/WebGoat.war')
       .with(source: 'http://webgoat.googlecode.com/files/WebGoat-5.4.war')
   end

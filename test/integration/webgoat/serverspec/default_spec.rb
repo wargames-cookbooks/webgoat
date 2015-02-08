@@ -12,13 +12,14 @@ end
 
 describe service 'tomcat' do
   it { should be_enabled }
-  it { should be_running}
+  it { should be_running }
 end
 
 describe port 8080 do
   it { should be_listening }
 end
 
-describe command 'wget -O - http://webgoat:webgoat@127.0.0.1:8080/WebGoat/attack' do
+describe command 'wget -O - http://webgoat:webgoat@127.0.0.1:8080'\
+                 '/WebGoat/attack' do
   its(:stdout) { should match(/WebGoat V5.4/) }
 end
