@@ -9,7 +9,25 @@ Requirements
 - `Ubuntu 12.04`
 
 #### Cookbooks
-- `tomcat` - https://github.com/opscode-cookbooks/tomcat.git
+- `java`
+
+Attributes
+----------
+#### webgoat::default
+<table>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+<tr>
+<td><tt>['webgoat']['path']</tt></td>
+<td>String</td>
+<td>Path where will be stored jar file.</td>
+<td><tt>/opt/webgoat</tt></td>
+</tr>
+</table>
 
 Usage
 -----

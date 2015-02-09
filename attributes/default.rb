@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # Cookbook Name:: webgoat
-# Recipe:: default
+# Attributes:: default
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,27 +16,4 @@
 # limitations under the License.
 #
 
-include_recipe 'java'
-
-base_url = 'https://github.com/WebGoat/WebGoat/releases/download'
-local_file = "#{node['webgoat']['path']}/webgoat.jar"
-
-directory node['webgoat']['path'] do
-  recursive true
-end
-
-remote_file local_file do
-  source "#{base_url}/v6.0.1/WebGoat-6.0.1-war-exec.jar"
-end
-
-template '/etc/init.d/webgoat' do
-  source 'webgoat.erb'
-  mode '0755'
-  variables path: node['webgoat']['path']
-end
-
-execute 'update-rc.d webgoat defaults'
-
-service 'webgoat' do
-  action :start
-end
+default['webgoat']['path'] = '/opt/webgoat'

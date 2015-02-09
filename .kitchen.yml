@@ -11,10 +11,7 @@ platforms:
 suites:
 - name: webgoat
   run_list:
-  - recipe[java]
-  - recipe[tomcat]
-  - recipe[tomcat::users]
   - recipe[webgoat]
   attributes:
-    tomcat:
-      base_version: 7
+    webgoat:
+      path: /opt/wg

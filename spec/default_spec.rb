@@ -11,12 +11,38 @@ require 'chef/application'
 describe 'webgoat::default' do
   let(:subject) do
     ChefSpec::SoloRunner.new do |node|
-      node.set['tomcat']['webapp_dir'] = '/opt/tomcat/webapp'
+      node.set['webgoat']['path'] = '/opt/webgoat-app'
     end.converge(described_recipe)
   end
 
-  it 'should download war file and place it in tomcat webapp directory' do
-    expect(subject).to create_remote_file('/opt/tomcat/webapp/WebGoat.war')
-      .with(source: 'http://webgoat.googlecode.com/files/WebGoat-5.4.war')
+  it 'should include java recipe' do
+    expect(subject).to include_recipe('java')
+  end
+
+  it 'should create webgoat directory' do
+    expect(subject).to create_directory('/opt/webgoat-app')
+  end
+
+  it 'should download webgoat jar file' do
+    expect(subject).to create_remote_file('/opt/webgoat-app/webgoat.jar')
+      .with(source: 'https://github.com/WebGoat/WebGoat/releases/download/'\
+                    'v6.0.1/WebGoat-6.0.1-war-exec.jar')
+  end
+
+  it 'should create webgoat service' do
+    service = '/etc/init.d/webgoat'
+    expect(subject).to create_template(service)
+      .with(source: 'webgoat.erb',
+            mode: '0755')
+    expect(subject).to render_file(service).with_content(
+      %r{^DAEMON_ARGS="-jar /opt/webgoat-app/webgoat.jar"$})
+  end
+
+  it 'should init webgoat service' do
+    expect(subject).to run_execute('update-rc.d webgoat defaults')
+  end
+
+  it 'should start webgoat service' do
+    expect(subject).to start_service('webgoat')
   end
 end
