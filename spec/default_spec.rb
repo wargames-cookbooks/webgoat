@@ -12,6 +12,7 @@ describe 'webgoat::default' do
   let(:subject) do
     ChefSpec::SoloRunner.new do |node|
       node.set['webgoat']['path'] = '/opt/webgoat-app'
+      node.set['webgoat']['port'] = 1337
     end.converge(described_recipe)
   end
 
@@ -35,7 +36,7 @@ describe 'webgoat::default' do
       .with(source: 'webgoat.erb',
             mode: '0755')
     expect(subject).to render_file(service).with_content(
-      %r{^DAEMON_ARGS="-jar /opt/webgoat-app/webgoat.jar"$})
+      %r{^DAEMON_ARGS="-jar /opt/webgoat-app/webgoat.jar -httpPort 1337"$})
   end
 
   it 'should init webgoat service' do

@@ -17,3 +17,4 @@
 #
 
 default['webgoat']['path'] = '/opt/webgoat'
+default['webgoat']['port'] = 8080

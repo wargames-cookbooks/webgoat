@@ -15,3 +15,4 @@ suites:
   attributes:
     webgoat:
       path: /opt/wg
+      port: 8081

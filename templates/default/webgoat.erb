@@ -16,7 +16,7 @@ PATH=/sbin:/usr/sbin:/bin:/usr/bin
 DESC="WebGoat webapp"
 NAME=WebGoat
 DAEMON=/usr/bin/java
-DAEMON_ARGS="-jar <%= @path %>/webgoat.jar"
+DAEMON_ARGS="-jar <%= @path %>/webgoat.jar -httpPort <%= @port %>"
 PIDFILE=/var/run/$NAME.pid
 SCRIPTNAME=/etc/init.d/$NAME
 

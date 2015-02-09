@@ -27,6 +27,12 @@ Attributes
 <td>Path where will be stored jar file.</td>
 <td><tt>/opt/webgoat</tt></td>
 </tr>
+<tr>
+<td><tt>['webgoat']['port']</tt></td>
+<td>Integer</td>
+<td>HTTP Port for webgoat instance.</td>
+<td><tt>8080</tt></td>
+</tr>
 </table>
 
 Usage
@@ -40,7 +46,12 @@ Just include `webgoat` in your node's `run_list`:
   "name":"my_node",
   "run_list": [
     "recipe[webgoat]"
-  ]
+  ],
+  "attributes": {
+    "webgoat": {
+      "port": "8090"
+    }
+  }
 }
 ```
 

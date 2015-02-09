@@ -29,10 +29,10 @@ describe service 'webgoat' do
   it { should be_running }
 end
 
-describe port 8080 do
+describe port 8081 do
   it { should be_listening }
 end
 
-describe command 'wget -O - http://127.0.0.1:8080/WebGoat/attack' do
+describe command 'wget -O - http://127.0.0.1:8081/WebGoat/attack' do
   its(:stdout) { should match(/Login Page/) }
 end

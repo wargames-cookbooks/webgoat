@@ -32,7 +32,8 @@ end
 template '/etc/init.d/webgoat' do
   source 'webgoat.erb'
   mode '0755'
-  variables path: node['webgoat']['path']
+  variables path: node['webgoat']['path'],
+            port: node['webgoat']['port']
 end
 
 execute 'update-rc.d webgoat defaults'
