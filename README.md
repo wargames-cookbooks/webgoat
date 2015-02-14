@@ -7,9 +7,10 @@ Requirements
 ------------
 #### Platform
 - `Ubuntu 12.04`
+- `Debian 7.6`
 
 #### Cookbooks
-- `java`
+- `java` - https://supermarket.chef.io/cookbooks/java
 
 Attributes
 ----------

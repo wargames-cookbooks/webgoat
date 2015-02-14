@@ -26,3 +26,4 @@ recipe 'default', 'Installs/configures WebGoat'
 depends 'java'
 
 supports 'ubuntu'
+supports 'debian'
