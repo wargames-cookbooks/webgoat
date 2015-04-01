@@ -18,7 +18,10 @@
 
 include_recipe 'java'
 
-base_url = 'https://github.com/WebGoat/WebGoat/releases/download'
+
+remote_file = 'https://webgoat.atlassian.net/builds/browse/WEB-WGM/'\
+              'latestSuccessful/artifact/shared/WebGoat-Embedded-Tomcat/'\
+              'WebGoat-6.0.1-war-exec.jar'
 local_file = "#{node['webgoat']['path']}/webgoat.jar"
 
 directory node['webgoat']['path'] do
@@ -26,7 +29,7 @@ directory node['webgoat']['path'] do
 end
 
 remote_file local_file do
-  source "#{base_url}/v6.0.1/WebGoat-6.0.1-war-exec.jar"
+  source remote_file
 end
 
 template '/etc/init.d/webgoat' do
