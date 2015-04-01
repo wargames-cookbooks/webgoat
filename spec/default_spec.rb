@@ -26,8 +26,9 @@ describe 'webgoat::default' do
 
   it 'should download webgoat jar file' do
     expect(subject).to create_remote_file('/opt/webgoat-app/webgoat.jar')
-      .with(source: 'https://github.com/WebGoat/WebGoat/releases/download/'\
-                    'v6.0.1/WebGoat-6.0.1-war-exec.jar')
+      .with(source: 'https://webgoat.atlassian.net/builds/browse/WEB-WGM/'\
+                    'latestSuccessful/artifact/shared/WebGoat-Embedded-Tomcat/'\
+                    'WebGoat-6.0.1-war-exec.jar')
   end
 
   it 'should create webgoat service' do
