@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of webgoat cookbook.
 
+## 0.2.1:
+
+* Location of executable jar file changed
+
 ## 0.2.0:
 
 * Deploy WebGoat from jar file (WebGoat 6.0)
