@@ -18,17 +18,13 @@
 
 include_recipe 'java'
 
-remote_file = 'https://webgoat.atlassian.net/builds/browse/WEB-WGM/'\
-              'latestSuccessful/artifact/shared/WebGoat-Embedded-Tomcat/'\
-              'WebGoat-6.0.1-war-exec.jar'
-local_file = "#{node['webgoat']['path']}/webgoat.jar"
-
 directory node['webgoat']['path'] do
   recursive true
 end
 
-remote_file local_file do
-  source remote_file
+remote_file "#{node['webgoat']['path']}/webgoat.jar" do
+  source node['webgoat']['jar']
+  checksum node['webgoat']['checksum']
 end
 
 template '/etc/init.d/webgoat' do

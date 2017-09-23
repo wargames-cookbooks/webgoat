@@ -18,3 +18,5 @@
 
 default['webgoat']['path'] = '/opt/webgoat'
 default['webgoat']['port'] = 8080
+default['webgoat']['jar'] = 'https://github.com/WebGoat/WebGoat/releases/download/7.1/webgoat-container-7.1-exec.jar'
+default['webgoat']['checksum'] = 'cc531e1e5d5b21394963f2a9bde00e83785ba1a94340bd13bde83dc24e23b77b'

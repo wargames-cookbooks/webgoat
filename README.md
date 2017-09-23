@@ -6,8 +6,8 @@ Deploy a WebGoat 5.4 environment.
 Requirements
 ------------
 #### Platform
-- `Ubuntu 12.04`
-- `Debian 7.6`
+- `Ubuntu 14.04`
+- `Debian 9.0`
 
 #### Cookbooks
 - `java` - https://supermarket.chef.io/cookbooks/java
@@ -15,26 +15,12 @@ Requirements
 Attributes
 ----------
 #### webgoat::default
-<table>
-<tr>
-<th>Key</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-<tr>
-<td><tt>['webgoat']['path']</tt></td>
-<td>String</td>
-<td>Path where will be stored jar file.</td>
-<td><tt>/opt/webgoat</tt></td>
-</tr>
-<tr>
-<td><tt>['webgoat']['port']</tt></td>
-<td>Integer</td>
-<td>HTTP Port for webgoat instance.</td>
-<td><tt>8080</tt></td>
-</tr>
-</table>
+| Key                   | Type   |  Description                                                  |
+| --------------------- | ------ | ------------------------------------------------------------- |
+| `[webgoat][path]`     | String | Path where will be stored jar file. (default: `/opt/webgoat`) |
+| `[webgoat][port]`     | String | HTTP Port for wehboat instance. (default: `8080`)             |
+| `[webgoat][jar]`      | String | Webgoat jar URL.                                              |
+| `[webgoat][checksum]` | String | SHA256 sum for jar file.                                      |
 
 Usage
 -----
