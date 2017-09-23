@@ -10,9 +10,10 @@ require 'chef/application'
 
 describe 'webgoat::default' do
   let(:subject) do
-    ChefSpec::SoloRunner.new do |node|
-      node.set['webgoat']['path'] = '/opt/webgoat-app'
-      node.set['webgoat']['port'] = 1337
+    ChefSpec::SoloRunner.new(platform: 'debian',
+                             version: '9.0') do |node|
+      node.override['webgoat']['path'] = '/opt/webgoat-app'
+      node.override['webgoat']['port'] = 1337
     end.converge(described_recipe)
   end
 
