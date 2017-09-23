@@ -2,6 +2,15 @@
 
 This file is used to list changes made in each version of webgoat cookbook.
 
+## 0.3.0:
+
+* Chef 13 support
+* Add attributes for webgoat jar file and checksum
+* Download from github by default
+* Set supported platform to:
+  - Debian 9
+  - Ubuntu 14.04
+
 ## 0.2.1:
 
 * Location of executable jar file changed
