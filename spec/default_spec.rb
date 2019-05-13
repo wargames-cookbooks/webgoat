@@ -11,7 +11,7 @@ require 'chef/application'
 describe 'webgoat::default' do
   let(:subject) do
     ChefSpec::SoloRunner.new(platform: 'debian',
-                             version: '9.0') do |node|
+                             version: '9.5') do |node|
       node.override['webgoat']['path'] = '/opt/webgoat-app'
       node.override['webgoat']['port'] = 1337
     end.converge(described_recipe)
