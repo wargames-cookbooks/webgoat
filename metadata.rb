@@ -19,7 +19,7 @@ maintainer_email 'sliim@mailoo.org'
 license 'Apache-2.0'
 description 'Installs/Configures WebGoat application'
 chef_version '>= 12.5'
-version '0.3.0'
+version '0.4.0'
 
 depends 'java', '<= 3.2.0'
 

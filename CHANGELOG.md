@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of webgoat cookbook.
 
+## 0.4.0:
+
+* Pin java cookbook version to 3.2.0
+* CI fixes
+
 ## 0.3.0:
 
 * Chef 13 support
