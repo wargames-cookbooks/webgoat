@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Cookbook Name:: webgoat
+# Cookbook:: webgoat
 # Attributes:: default
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
